@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Day04 do
-  alias AdventOfCode.Utils.Board
+  # alias AdventOfCode.Utils.Board
 
   def part1(filename \\ "priv/day_04.txt") do
     {board, max_x, max_y} = prepare_data(filename)
@@ -58,7 +58,7 @@ defmodule AdventOfCode.Day04 do
   def part2(filename \\ "priv/day_04.txt") do
     {board, max_x, max_y} = prepare_data(filename)
 
-    {board, total} = check_until(-1, 0, board, max_x, max_y)
+    {_board, total} = check_until(-1, 0, board, max_x, max_y)
 
     # Board.print(board, max_x, max_y)
 
