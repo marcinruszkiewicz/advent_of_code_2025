@@ -14,7 +14,7 @@ defmodule AdventOfCode.Utils.NewDay do
         File.cwd!()
         |> Path.join(filename)
         |> File.stream!()
-        |> Enum.map(fn f -> f end)
+        |> Enum.map(fn f -> String.trim(f) end)
       end
     end
 

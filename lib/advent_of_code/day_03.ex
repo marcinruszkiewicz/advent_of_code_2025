@@ -22,9 +22,9 @@ defmodule AdventOfCode.Day03 do
         total = length(indexed)
         find_index = total + counter
 
-        {_, first} = Enum.split_with(input, fn {i, v} -> i >= find_index end)
-        {max_index, max_first} = Enum.max_by(first, fn {i, v} -> v end)
-        {rest, _} = Enum.split_with(input, fn {i, v} -> i > max_index end) 
+        {_, first} = Enum.split_with(input, fn {i, _v} -> i >= find_index end)
+        {max_index, max_first} = Enum.max_by(first, fn {_i, v} -> v end)
+        {rest, _} = Enum.split_with(input, fn {i, _v} -> i > max_index end) 
 
         {rest, result ++ [max_first]}
       end) 
