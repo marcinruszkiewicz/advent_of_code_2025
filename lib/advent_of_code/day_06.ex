@@ -1,10 +1,11 @@
 defmodule AdventOfCode.Day06 do
-  alias AdventOfCode.Utils.Board
+  # alias AdventOfCode.Utils.Board
+  alias AdventOfCode.Utils.EnumUtils
 
   def part1(filename \\ "priv/day_06.txt") do
     {board, max_x, max_y} = prepare_data(filename)
 
-    results = Enum.map(0..max_x-1, fn x -> 
+    _results = Enum.map(0..max_x-1, fn x -> 
       op = Map.get(board, {x, max_y-1})
       first = Map.get(board, {x, 0}) |> String.to_integer
 
@@ -54,7 +55,7 @@ defmodule AdventOfCode.Day06 do
 
         Enum.slice(line, index, size)
       end) 
-      |> Enum.zip_with(&Function.identity/1)
+      |> EnumUtils.transpose()
       |> Enum.map(fn ar -> Enum.join(ar, "") |> String.trim() end)
       |> Enum.reject(fn i -> i == "" end)
       |> Enum.map(&String.to_integer/1)
