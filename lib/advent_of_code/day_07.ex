@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Day07 do
-  alias AdventOfCode.Utils.Board
+  # alias AdventOfCode.Utils.Board
 
   def part1(filename \\ "priv/day_07.txt") do
     {board, max_x, max_y} = prepare_data(filename)
@@ -14,7 +14,7 @@ defmodule AdventOfCode.Day07 do
   end
 
   def check_row(count, board, max_x, y) do
-    {count, board} = Enum.reduce(0..max_x-1//1, {count, board}, fn x, {count, board} -> 
+    Enum.reduce(0..max_x-1//1, {count, board}, fn x, {count, board} -> 
       piece = Map.get(board, {x, y})
 
       case piece do
@@ -66,7 +66,7 @@ defmodule AdventOfCode.Day07 do
   end
 
   def check_row_part2(board, max_x, y) do
-    board = Enum.reduce(0..max_x-1//1, board, fn x, board -> 
+    _board = Enum.reduce(0..max_x-1//1, board, fn x, board -> 
       piece = Map.get(board, {x, y})
 
       case piece do
