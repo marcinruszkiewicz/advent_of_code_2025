@@ -4,10 +4,14 @@ defmodule AdventOfCode.Utils.NewDay do
     defmodule AdventOfCode.Day#{day_num} do
       def part1(filename \\\\ "priv/day_#{day_num}.txt") do
         prepare_data(filename)
+
+        0
       end
 
       def part2(filename \\\\ "priv/day_#{day_num}.txt") do
         prepare_data(filename)
+
+        0
       end
 
       defp prepare_data(filename) do
